@@ -1,0 +1,102 @@
+{% extends "HttpiMaritimeAdminBundle:Default:base_sidebar.html.twig" %}
+
+{% block breadcrumbs %}
+<ul>
+	<li><a href="{{ path('httpi_maritime_admin_lexicon_index') }}">Lexicon</a></li>
+	<li><h1 class="title">- Import</h1></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+{{ form(form, {'attr': {'class': 'default importForm'}, 'action': path('httpi_maritime_admin_lexicon_import') }) }}
+{% endblock %}
+
+{% block sidebar %}
+<form action="{{ path('httpi_maritime_admin_lexicon_upload') }}" class="dropzone" id="addImportFilesForm" enctype="multipart/form-data">
+</form>
+{% endblock %}
+
+{% block css %}
+    {{ parent() }}
+    {% stylesheets
+        '@HttpiMaritimeAdminBundle/Resources/public/css/form.css'
+        '@HttpiCoreBundle/Resources/public/js/jqwidgets/jqwidgets/styles/jqx.base.css'
+        '@HttpiCoreBundle/Resources/public/js/jqwidgets/jqwidgets/styles/jqx.darkblue.css'
+        '@HttpiCoreBundle/Resources/public/js/jqwidgets/jqwidgets/styles/jqx.green.css'
+        '@HttpiCoreBundle/Resources/public/js/jqwidgets/jqwidgets/styles/jqx.red.css'
+        '@HttpiMaritimeAdminBundle/Resources/public/js/dropzone/css/dropzone.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    {% javascripts
+        '@HttpiMaritimeAdminBundle/Resources/public/js/form.js'
+        '@HttpiMaritimeAdminBundle/Resources/public/js/dropzone/dropzone.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block jsexec %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            {% for message in app.session.flashbag.get('flash') %}
+            var params = {
+                title: '{{ message.title }}',
+                content: '{{ message.content }}',
+                type: '{{ message.type }}'
+            };
+
+            if (params.type == 'confirm') {
+                params.buttons = [{ value: "Yes" }, { value: "No" }];
+                params.success = {{ message.success | raw }};
+            }
+
+            $.msgBox(params);
+            {% endfor %}
+
+            $('#httpi_bundle_corebundle_import_Import').hide();
+
+            Dropzone.options.addImportFilesForm = {
+                url: "{{ path('httpi_maritime_admin_lexicon_upload') }}",
+                maxFilesize: 50,
+                maxFiles: 6,
+                uploadMultiple: true,
+                parallelUploads: 6,
+                autoProcessQueue: true,
+                //addRemoveLinks: 'dictRemoveFile',
+                acceptedFiles: 'text/csv,' +
+                               'application/vnd.ms-excel',
+                init: function() {
+                    // error event
+                    this.on("error", function(file, message) {
+
+                        var params = {
+                            title: 'Error!',
+                            content: message,
+                            type: 'error'
+                        };
+                        $.msgBox(params);
+
+                    });
+
+                    this.on('successmultiple', function (files, responseText, e) {
+                        $('input[name="httpi_bundle_corebundle_import[fileIds]"]').val(responseText.fileIdsString);
+                        $('#httpi_bundle_corebundle_import_Import').show();
+                    });
+
+
+                },
+                accept: function(file, done) {
+                    console.log('accept', true);
+                    done();
+                }
+            };
+
+        });
+    </script>
+{% endblock %}

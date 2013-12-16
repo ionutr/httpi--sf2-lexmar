@@ -1,0 +1,25 @@
+<div id="menu">
+	<ul>
+		<li><a href="{{ path('httpi_maritime_admin_homepage') }}">Dashboard</a></li>
+		<li>Lexicon
+			<ul>
+				<li><a href="{{ path('httpi_maritime_admin_lexicon_index') }}">List/search</a></li>
+				<li><a href="{{ path('httpi_maritime_admin_lexicon_add') }}">Add term</a></li>
+				<li><a href="{{ path('httpi_maritime_admin_lexicon_import') }}">Import</a></li>
+			</ul>
+		</li>
+		<li>Glossary
+			<ul>
+				<li><a href="{{ path('httpi_maritime_admin_glossary_index') }}">List/search</a></li>
+				<li><a href="{{ path('httpi_maritime_admin_glossary_add') }}">Add term</a></li>
+			</ul>
+		</li>
+		<li>System
+			<ul>
+				{#<li><a href="{{ path('admin_status_') }}">Status Management</a></li>#}
+				<li><a href="#">Users</a></li>
+				<li><a href="#">Statistics</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>

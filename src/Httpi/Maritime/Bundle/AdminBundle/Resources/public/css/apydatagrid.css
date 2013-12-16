@@ -1,0 +1,30 @@
+.grid table {
+	table-layout: fixed;
+}
+.grid select {
+	width: 20px !important;
+}
+.grid tbody tr {
+	max-height: 50px;
+	height: 50px;
+	overflow: hidden;
+}
+
+.grid-column-id {
+	font-weight: bold !important;
+	font-size: 12px !important;
+}
+
+.grid-column-abbr {
+	font-weight: bold;
+	color: #004a73 !important;
+}
+
+.grid-column-value {
+	font-size: 11px;
+}
+
+.grid-column-created_at {
+	font-size: 11px;
+	font-style: italic;
+}

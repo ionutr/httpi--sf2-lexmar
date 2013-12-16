@@ -1,0 +1,3 @@
+Httpi\Maritime\Bundle\CoreBundle\Entity\Lexicon:
+  constraints:
+    - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: abbr

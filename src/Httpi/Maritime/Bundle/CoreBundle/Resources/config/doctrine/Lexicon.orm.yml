@@ -1,0 +1,52 @@
+Httpi\Maritime\Bundle\CoreBundle\Entity\Lexicon:
+    type: entity
+    table: lexicon
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        abbr:
+            type: string
+            length: 128
+            fixed: false
+            nullable: false
+        value:
+            type: text
+            nullable: false
+        isVerified:
+            type: boolean
+            nullable: false
+            column: is_verified
+        isPublished:
+            type: boolean
+            nullable: false
+            column: is_published
+        isImported:
+            type: boolean
+            nullable: false
+            column: is_imported
+    manyToOne:
+        info:
+            targetEntity: Httpi\Bundle\CoreBundle\Entity\Info
+            cascade: ["persist"]
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                info_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        import:
+            targetEntity: Httpi\Bundle\CoreBundle\Entity\Import
+            cascade: ["persist"]
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                import_id:
+                    referencedColumnName: id
+                    nullable: true
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

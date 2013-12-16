@@ -1,0 +1,46 @@
+html {
+	background-color: #004756;
+}
+
+body {
+	
+}
+
+* {
+	
+}
+
+#wrapper {
+	width: 1260px;
+	margin: 20px auto 0 auto;
+	border: 1px solid #000;
+	background-color: #ccdadd;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+
+#page {
+	padding: 30px 20px 50px 50px;
+	overflow: hidden;
+}
+
+#menu {
+	margin-top: 25px;
+	padding-left: 40px;
+}
+
+#content {
+	width: 650px;
+	overflow: hidden;
+	float: left;
+}
+
+#content.full {
+	width: 1160px;
+	float: none;
+}
+
+#sidebar {
+	width: 400px;
+	float: right;
+}

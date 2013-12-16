@@ -1,0 +1,30 @@
+{% if message is defined and message %}
+			
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+			var params = {
+				title: '{{ message.title }}',
+				content: '{{ message.content }}',
+				type: '{{ message.type }}'
+			};
+
+			if (params.type == 'confirm') {
+				params.buttons = [{ value: "Yes" }, { value: "No" }];
+				params.success = function (result) {
+					if (result == "Yes") {
+						window.location.href += "&confirmed=1";
+					} else {
+						window.history.go(-2);
+					}
+				}
+			}
+
+			$.msgBox(params);
+
+		});
+
+
+	</script>
+{% endif %}

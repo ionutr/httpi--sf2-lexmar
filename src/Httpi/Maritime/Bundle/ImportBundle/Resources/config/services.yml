@@ -1,0 +1,7 @@
+parameters:
+#    httpi_maritime_import.example.class: Httpi\Maritime\Bundle\ImportBundle\Example
+
+services:
+#    httpi_maritime_import.example:
+#        class: %httpi_maritime_import.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

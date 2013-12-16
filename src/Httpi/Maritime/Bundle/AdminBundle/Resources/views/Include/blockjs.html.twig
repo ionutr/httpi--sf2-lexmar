@@ -1,0 +1,12 @@
+{% block js %}
+	{% javascripts
+		'@HttpiMaritimeCoreBundle/Resources/public/js/jquery.min.js'
+		'@HttpiMaritimeAdminBundle/Resources/public/js/jquerymsgbox/Scripts/jquery.msgBox.js'
+		'@HttpiMaritimeAdminBundle/Resources/public/js/jqwidgets/jqwidgets/jqxcore.js'
+		'@HttpiMaritimeAdminBundle/Resources/public/js/jqwidgets/jqwidgets/jqxmenu.js'
+		'@HttpiMaritimeAdminBundle/Resources/public/js/jqwidgets/jqwidgets/jqxbuttons.js'
+		'@HttpiMaritimeAdminBundle/Resources/public/js/run.js'
+	%}
+	<script src="{{ asset_url }}" type="text/javascript"></script>
+	{% endjavascripts %}
+{% endblock %}

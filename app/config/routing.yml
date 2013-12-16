@@ -1,0 +1,19 @@
+httpi_core:
+    resource: "@HttpiCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+httpi_maritime_core:
+    resource: "@HttpiMaritimeCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+httpi_maritime_admin:
+    resource: "@HttpiMaritimeAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+httpi_maritime_import:
+    resource: "@HttpiMaritimeImportBundle/Resources/config/routing.yml"
+    prefix:   /
+
+oneup_uploader:
+    resource: .
+    type: uploader

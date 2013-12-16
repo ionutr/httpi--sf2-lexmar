@@ -1,0 +1,64 @@
+{
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "description": "The \"Symfony Standard Edition\" distribution",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.3-dev"
+        },
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
+        },
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web"
+    },
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "name": "symfony/framework-standard-edition",
+    "require": {
+        "apy/datagrid-bundle": "2.1.*@dev",
+        "doctrine/doctrine-bundle": "1.2.*",
+        "doctrine/doctrine-migrations-bundle": "dev-master",
+        "doctrine/data-fixtures": "1.0.*@dev",
+		"doctrine/doctrine-fixtures-bundle": "v2.2.0",
+        "doctrine/migrations": "dev-master",
+        "doctrine/orm": ">=2.2.3,<2.4-dev",
+        "incenteev/composer-parameter-handler": "~2.0",
+        "oneup/uploader-bundle": "v0.9.8",
+        "php": ">=5.3.3",
+        "phpunit/phpunit": "3.7.*@dev",
+        "sensio/distribution-bundle": "2.3.*",
+        "sensio/framework-extra-bundle": "2.3.*",
+        "sensio/generator-bundle": "2.3.*",
+        "symfony/assetic-bundle": "2.3.*",
+        "symfony/monolog-bundle": "2.3.*",
+        "symfony/swiftmailer-bundle": "2.3.*",
+        "symfony/symfony": "2.3.*",
+        "twig/extensions": "1.0.*"
+    },
+    "require-dev": {
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ],
+        "post-update-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ]
+    },
+    "type": "project"
+}

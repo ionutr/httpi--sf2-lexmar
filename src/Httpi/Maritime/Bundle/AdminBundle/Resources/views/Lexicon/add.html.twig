@@ -1,0 +1,65 @@
+{% extends "HttpiCoreBundle:Crud:add.html.twig" %}
+
+{% block meta_copyright %}&copy; Rus Cristian{% endblock %}
+{% block title %}Lexmar Admin - Add lexicon term{% endblock %}
+{% block menu %}{% include 'HttpiMaritimeAdminBundle:Default:menu.html.twig' %}{% endblock %}
+
+{% block breadcrumbs %}
+<ul>
+	<li><a href="{{ path('httpi_maritime_admin_lexicon_index') }}">Lexicon</a></li>
+	<li><h1 class="title">- Add</h1></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+{{ form(form, {'attr': {'class': 'default'}, 'action': path('httpi_maritime_admin_lexicon_add')}) }}
+{% endblock %}
+
+{% block css %}
+	{{ parent() }}
+	{% stylesheets
+        '@HttpiMaritimeAdminBundle/Resources/public/css/general.css'
+        '@HttpiMaritimeAdminBundle/Resources/public/css/breadcrumbs.css'
+        '@HttpiMaritimeAdminBundle/Resources/public/js/jquerymsgbox/Styles/msgBoxLight.css'
+        '@HttpiMaritimeAdminBundle/Resources/public/css/form.css'
+    %}
+	<link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block js %}
+	{{ parent() }}
+	{% javascripts
+        '@HttpiCoreBundle/Resources/public/js/jquerymsgbox/Scripts/jquery.msgBox.js'
+        '@HttpiCoreBundle/Resources/public/js/jqwidgets/jqwidgets/jqxcore.js'
+        '@HttpiCoreBundle/Resources/public/js/jqwidgets/jqwidgets/jqxmenu.js'
+        '@HttpiCoreBundle/Resources/public/js/jqwidgets/jqwidgets/jqxbuttons.js'
+        '@HttpiMaritimeAdminBundle/Resources/public/js/form.js'
+        '@HttpiMaritimeAdminBundle/Resources/public/js/run.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+ {% block jsexec %}
+     <script type="text/javascript">
+         $(document).ready(function() {
+
+             {% for message in app.session.flashbag.get('flash') %}
+             var params = {
+                 title: '{{ message.title }}',
+                 content: '{{ message.content }}',
+                 type: '{{ message.type }}'
+             };
+
+             if (params.type == 'confirm') {
+                 params.buttons = [{ value: "Yes" }, { value: "No" }];
+                 params.success = {{ message.success | raw }};
+             }
+
+             $.msgBox(params);
+             {% endfor %}
+
+         });
+     </script>
+ {% endblock %}

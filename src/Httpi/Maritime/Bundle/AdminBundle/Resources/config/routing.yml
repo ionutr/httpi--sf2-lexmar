@@ -1,0 +1,43 @@
+httpi_maritime_admin_homepage:
+    pattern:  /admin/
+    defaults: { _controller: HttpiMaritimeAdminBundle:Default:index }
+
+httpi_maritime_admin_lexicon_index:
+    pattern:  /admin/lexicon/
+    defaults: { _controller: HttpiMaritimeAdminBundle:Lexicon:index }
+
+httpi_maritime_admin_lexicon_add:
+    pattern:  /admin/lexicon/add/
+    defaults: { _controller: HttpiMaritimeAdminBundle:Lexicon:add }
+
+httpi_maritime_admin_lexicon_edit:
+    pattern:  /admin/lexicon/edit/
+    defaults: { _controller: HttpiMaritimeAdminBundle:Lexicon:edit }
+
+httpi_maritime_admin_lexicon_delete:
+    pattern:  /admin/lexicon/delete/
+    defaults: { _controller: HttpiMaritimeAdminBundle:Lexicon:delete }
+
+httpi_maritime_admin_lexicon_import:
+    pattern:  /admin/lexicon/import/
+    defaults: { _controller: HttpiMaritimeAdminBundle:Lexicon:import }
+
+httpi_maritime_admin_lexicon_upload:
+    pattern:  /admin/lexicon/import/upload/
+    defaults: { _controller: HttpiMaritimeAdminBundle:Lexicon:upload }
+
+httpi_maritime_admin_glossary_index:
+    pattern:  /admin/glossary/
+    defaults: { _controller: HttpiMaritimeAdminBundle:Glossary:index }
+
+httpi_maritime_admin_glossary_add:
+    pattern:  /admin/glossary/add/
+    defaults: { _controller: HttpiMaritimeAdminBundle:Glossary:add }
+
+httpi_maritime_admin_glossary_edit:
+    pattern:  /admin/glossary/edit/
+    defaults: { _controller: HttpiMaritimeAdminBundle:Glossary:edit }
+
+httpi_maritime_admin_glossary_delete:
+    pattern:  /admin/glossary/delete/
+    defaults: { _controller: HttpiMaritimeAdminBundle:Glossary:delete }

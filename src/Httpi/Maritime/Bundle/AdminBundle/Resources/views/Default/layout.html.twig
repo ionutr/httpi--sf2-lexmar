@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>{% block title %}LexMar 0.1.0 [dev]{% endblock %}</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="en" />
+		<meta name="Publisher" content="httpi" />
+		<meta name="Copyright" content="&copy; Rus Cristian" />
+		
+		{% block css %}
+		<link href="{{ asset('bundles/httpimaritimeadmin/css/reset.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/httpimaritimeadmin/css/general.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/httpimaritimeadmin/css/breadcrumbs.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/httpimaritimeadmin/js/jquerymsgbox/Styles/msgBoxLight.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/httpimaritimeadmin/js/jqwidgets/jqwidgets/styles/jqx.base.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/httpimaritimeadmin/js/jqwidgets/jqwidgets/styles/jqx.darkblue.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/httpimaritimeadmin/js/jqwidgets/jqwidgets/styles/jqx.lightness.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/httpimaritimeadmin/js/jqwidgets/jqwidgets/styles/jqx.green.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/httpimaritimeadmin/js/jqwidgets/jqwidgets/styles/jqx.red.css') }}" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="/res/css/datagrid.css" media="all" />
+        {% endblock %}
+
+	</head>		
+	<body>
+		
+		<!-- #wrapper -->
+		<div id="wrapper">
+			
+			{% include 'HttpiMaritimeAdminBundle:Default:menu.html.twig' %}
+				
+				<!-- #page -->
+				<div id="page">
+				{% block page %}
+					
+					<!-- #breadcrumbs -->
+					<div id="breadcrumbs">
+					{% block breadcrumbs %}{% endblock %}
+					</div>
+					<!-- //#breadcrumbs -->
+					
+					<!-- #content -->
+					<div id="content" class="{% block contentCssClass %}full{% endblock %}">
+					{% block content %}{% endblock %}
+					</div>
+					<!-- //#content -->
+				
+				{% endblock %}	
+				</div>
+				<!-- //#page -->
+			
+		</div>
+		<!-- //#wrapper -->
+		
+		{% block js %}
+			{% javascripts
+				'@HttpiMaritimeCoreBundle/Resources/public/js/jquery.min.js'
+				'@HttpiMaritimeAdminBundle/Resources/public/js/jquerymsgbox/Scripts/jquery.msgBox.js'
+				'@HttpiMaritimeAdminBundle/Resources/public/js/jqwidgets/jqwidgets/jqxcore.js'
+				'@HttpiMaritimeAdminBundle/Resources/public/js/jqwidgets/jqwidgets/jqxmenu.js'
+				'@HttpiMaritimeAdminBundle/Resources/public/js/jqwidgets/jqwidgets/jqxbuttons.js'
+				'@HttpiMaritimeAdminBundle/Resources/public/js/run.js'
+			%}
+			<script src="{{ asset_url }}" type="text/javascript"></script>
+			{% endjavascripts %}
+        {% endblock %}
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+                {% for message in app.session.flashbag.get('flash') %}
+                    var params = {
+                        title: '{{ message.title }}',
+                        content: '{{ message.content }}',
+                        type: '{{ message.type }}'
+                    };
+
+                    if (params.type == 'confirm') {
+                        params.buttons = [{ value: "Yes" }, { value: "No" }];
+                        params.success = {{ message.success | raw }};
+                    }
+
+                    $.msgBox(params);
+                {% endfor %}
+
+            });
+        </script>
+
+	</body>
+</html>

@@ -1,0 +1,51 @@
+{% extends "HttpiCoreBundle:Default:base.html.twig" %}
+
+{% block meta_copyright %}&copy; Rus Cristian{% endblock %}
+{% block menu %}{% include 'HttpiMaritimeAdminBundle:Default:menu.html.twig' %}{% endblock %}
+
+{% block css %}
+    {{ parent() }}
+    {% stylesheets
+    '@HttpiMaritimeAdminBundle/Resources/public/css/general.css'
+    '@HttpiMaritimeAdminBundle/Resources/public/css/breadcrumbs.css'
+    '@HttpiMaritimeAdminBundle/Resources/public/js/jquerymsgbox/Styles/msgBoxLight.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    {% javascripts
+    '@HttpiCoreBundle/Resources/public/js/jquerymsgbox/Scripts/jquery.msgBox.js'
+    '@HttpiCoreBundle/Resources/public/js/jqwidgets/jqwidgets/jqxcore.js'
+    '@HttpiCoreBundle/Resources/public/js/jqwidgets/jqwidgets/jqxmenu.js'
+    '@HttpiCoreBundle/Resources/public/js/jqwidgets/jqwidgets/jqxbuttons.js'
+    '@HttpiMaritimeAdminBundle/Resources/public/js/run.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+ {% block jsexec %}
+     <script type="text/javascript">
+         $(document).ready(function() {
+
+             {% for message in app.session.flashbag.get('flash') %}
+             var params = {
+                 title: '{{ message.title }}',
+                 content: '{{ message.content }}',
+                 type: '{{ message.type }}'
+             };
+
+             if (params.type == 'confirm') {
+                 params.buttons = [{ value: "Yes" }, { value: "No" }];
+                 params.success = {{ message.success | raw }};
+             }
+
+             $.msgBox(params);
+             {% endfor %}
+
+         });
+     </script>
+ {% endblock %}

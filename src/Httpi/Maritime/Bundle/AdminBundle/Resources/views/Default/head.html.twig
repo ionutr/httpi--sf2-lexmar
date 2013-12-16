@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>{% block title %}LexMar 0.1.0 [dev]{% endblock %}</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="en" />
+		<meta name="Publisher" content="httpi" />
+		<meta name="Copyright" content="&copy; Rus Cristian" />
+		
+		{% block stylesheets %}
+		<link href="{{ asset('bundles/httpimaritimeadmin/css/reset.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/httpimaritimeadmin/css/general.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/httpimaritimeadmin/css/form.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/httpimaritimeadmin/js/jqwidgets/jqwidgets/styles/jqx.base.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/httpimaritimeadmin/js/jqwidgets/jqwidgets/styles/jqx.darkblue.css') }}" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="/res/css/datagrid.css" media="all" />
+        {% endblock %}
+
+	</head>		
+	<body>
+		
+		<!-- #wrapper -->
+		<div id="wrapper">
+			
+			{% include 'HttpiMaritimeAdminBundle:Default:menu.html.twig' %}

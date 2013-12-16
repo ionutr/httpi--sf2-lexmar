@@ -1,0 +1,47 @@
+form.default {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+	padding-bottom: 50px;
+	background-color: moccasin;
+}
+
+form.default div.default {
+	
+}
+
+form.default div.default div {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+form.default div.default label {
+	display: block;
+	float: left;
+	width: 100px;
+	font-weight: bold;
+}
+
+p.success {
+	margin-top: 10px;
+	padding: 10px;
+	background-color: green;
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+p.delete, form.delete {
+	margin-left: 150px;
+	margin-top: -105px !important;
+}
+
+form.delete {
+	margin-top: -125px !important;
+}
+
+p.back {
+	margin-left: 280px;
+	margin-top: -35px;
+	padding-bottom: 20px;
+}

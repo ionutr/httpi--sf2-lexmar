@@ -1,0 +1,8 @@
+parameters:
+#    httpi_maritime_core.example.class: Httpi\Maritime\Bundle\CoreBundle\Example
+    custombundles: [HttpiCoreBundle, HttpiMaritimeCoreBundle, HttpiMaritimeAdminBundle, HttpiMaritimeImportBundle]
+
+services:
+#    httpi_maritime_core.example:
+#        class: %httpi_maritime_core.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
