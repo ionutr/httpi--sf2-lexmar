@@ -1,5 +1,0 @@
-_assetic:
-    resource: .
-    type: assetic
-_app:
-    resource: 'C:/Work/vhosts/httpi/lexmar/trunk/app/config/routing_dev.yml'
