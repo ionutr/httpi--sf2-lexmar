@@ -1,0 +1,3 @@
+[submodule "src/Httpi/Bundle/CoreBundle"]
+	path = src/Httpi/Bundle/CoreBundle
+	url = https://github.com/ionutr/httpi--sf2-corebundle.git
