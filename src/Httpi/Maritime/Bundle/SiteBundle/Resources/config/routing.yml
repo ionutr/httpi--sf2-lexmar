@@ -1,0 +1,3 @@
+httpi_maritime_site_homepage:
+    pattern:  /
+    defaults: { _controller: HttpiMaritimeSiteBundle:Default:index }

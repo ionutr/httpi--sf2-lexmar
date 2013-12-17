@@ -1,0 +1,7 @@
+parameters:
+#    httpi_maritime_site.example.class: Httpi\Maritime\Bundle\SiteBundle\Example
+
+services:
+#    httpi_maritime_site.example:
+#        class: %httpi_maritime_site.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
