@@ -10,6 +10,10 @@ httpi_maritime_admin:
     resource: "@HttpiMaritimeAdminBundle/Resources/config/routing.yml"
     prefix:   /
 
+httpi_maritime_site:
+    resource: "@HttpiMaritimeSiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
 httpi_maritime_import:
     resource: "@HttpiMaritimeImportBundle/Resources/config/routing.yml"
     prefix:   /
