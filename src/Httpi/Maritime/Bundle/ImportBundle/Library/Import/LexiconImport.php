@@ -41,6 +41,7 @@ class LexiconImport extends FileImport {
         // call parent core execution first
         $this->keepTransaction(true);
         parent::execute();
+        $this->beginTransaction();
 
         // iterate registered file ids
         foreach ($this->fileIds as $fileId) {
