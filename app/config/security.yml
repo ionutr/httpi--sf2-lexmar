@@ -10,8 +10,9 @@ security:
         in_memory:
             memory:
                 users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+                    crus:  { password: crpass, roles: [ 'ROLE_USER', 'ROLE_ADMIN' ] }
+                    irus:  { password: conopida, roles: [ 'ROLE_USER', 'ROLE_ADMIN' ] }
+                    admin: { password: adminpass, roles: [ 'ROLE_SUPER_ADMIN' ] }
 
     firewalls:
         dev:
@@ -23,19 +24,23 @@ security:
             security: false
 
         secured_area:
-            pattern:    ^/demo/secured/
+            pattern:    ^/admin/
             form_login:
-                check_path: _security_check
-                login_path: _demo_login
+                check_path: login_check
+                login_path: /login
             logout:
-                path:   _demo_logout
-                target: _demo
+                path:   /admin/logout
+                target: /admin/
+                invalidate_session: false #remove this on production server, local dev fix only!
             #anonymous: ~
-            #http_basic:
-            #    realm: "Secured Demo Area"
+            http_basic:
+                realm: "Secured Admin Area"
 
     access_control:
-        - { path: ^/demo/secured/hello/admin/, roles: ROLE_ADMIN }
+
+        - { path: ^/admin/system/, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/admin/status/, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/admin/, roles: ROLE_ADMIN }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
     acl:
         connection: default
