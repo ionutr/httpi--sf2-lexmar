@@ -1,0 +1,12 @@
+{% extends "HttpiCoreBundle:Security:login.html.twig" %}
+
+{% block css %}
+    {{ parent() }}
+    {% stylesheets
+    '@HttpiMaritimeCoreBundle/Resources/public/css/login.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block formCustom %}<h1 class="form-title">Lexmar Login:</h1>{% endblock %}
