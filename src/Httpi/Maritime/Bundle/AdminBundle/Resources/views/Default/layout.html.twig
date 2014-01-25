@@ -21,12 +21,14 @@
         {% endblock %}
 
 	</head>		
-	<body>
+	<body class="default {% block bodyCssClass %}{% endblock %}">
 		
 		<!-- #wrapper -->
 		<div id="wrapper">
-			
-			{% include 'HttpiMaritimeAdminBundle:Default:menu.html.twig' %}
+
+            {% block menu %}
+			    {% include 'HttpiMaritimeAdminBundle:Default:menu.html.twig' %}
+            {% endblock %}
 				
 				<!-- #page -->
 				<div id="page">
