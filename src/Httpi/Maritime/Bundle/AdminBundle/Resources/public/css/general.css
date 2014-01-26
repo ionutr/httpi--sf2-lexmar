@@ -27,6 +27,7 @@ body {
 #menu {
 	margin-top: 25px;
 	padding-left: 40px;
+    display: none;
 }
 
 #content {

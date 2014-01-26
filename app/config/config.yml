@@ -24,6 +24,8 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    globals:
+      appversion: %app.version%
 
 
 # Assetic Configuration
@@ -32,7 +34,7 @@ assetic:
 
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        [ HttpiCoreBundle, HttpiMaritimeAdminBundle ]
+    bundles:        [ HttpiCoreBundle, HttpiMaritimeCoreBundle, HttpiMaritimeAdminBundle, HttpiMaritimeSiteBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~

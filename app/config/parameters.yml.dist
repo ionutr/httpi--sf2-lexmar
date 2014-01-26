@@ -13,3 +13,6 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    extends_template:  HttpiMaritimeAdminBundle:Default:layout.html.twig
+    app.version:       dev

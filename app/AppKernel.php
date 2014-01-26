@@ -18,16 +18,16 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
 			new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Httpi\Maritime\Bundle\ImportBundle\HttpiMaritimeImportBundle(),
-            new Httpi\Maritime\Bundle\AdminBundle\HttpiMaritimeAdminBundle(),
 			new APY\DataGridBundle\APYDataGridBundle(),
             new Oneup\UploaderBundle\OneupUploaderBundle(),
-            new Httpi\Maritime\Bundle\CoreBundle\HttpiMaritimeCoreBundle(),
             new Httpi\Bundle\CoreBundle\HttpiCoreBundle(),
+            new Httpi\Maritime\Bundle\CoreBundle\HttpiMaritimeCoreBundle(),
+            new Httpi\Maritime\Bundle\ImportBundle\HttpiMaritimeImportBundle(),
+            new Httpi\Maritime\Bundle\AdminBundle\HttpiMaritimeAdminBundle(),
+            new Httpi\Maritime\Bundle\SiteBundle\HttpiMaritimeSiteBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
-            //$bundles[] = new Acme\DemoBundle\AcmeDemoBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();

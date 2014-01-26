@@ -10,6 +10,10 @@ httpi_maritime_admin:
     resource: "@HttpiMaritimeAdminBundle/Resources/config/routing.yml"
     prefix:   /
 
+httpi_maritime_site:
+    resource: "@HttpiMaritimeSiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
 httpi_maritime_import:
     resource: "@HttpiMaritimeImportBundle/Resources/config/routing.yml"
     prefix:   /
@@ -17,3 +21,13 @@ httpi_maritime_import:
 oneup_uploader:
     resource: .
     type: uploader
+
+login:
+    pattern: /login
+    defaults: { _controller: HttpiMaritimeCoreBundle:Security:login }
+
+login_check:
+    pattern: /admin/login_check
+
+logout:
+    path: /admin/logout
