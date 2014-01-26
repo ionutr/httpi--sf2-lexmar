@@ -8,16 +8,19 @@
 		<meta name="Copyright" content="&copy; Rus Cristian" />
 		
 		{% block css %}
-		<link href="{{ asset('bundles/httpimaritimeadmin/css/reset.css') }}" type="text/css" rel="stylesheet" />
-		<link href="{{ asset('bundles/httpimaritimeadmin/css/general.css') }}" type="text/css" rel="stylesheet" />
-		<link href="{{ asset('bundles/httpimaritimeadmin/css/breadcrumbs.css') }}" type="text/css" rel="stylesheet" />
-		<link href="{{ asset('bundles/httpimaritimeadmin/js/jquerymsgbox/Styles/msgBoxLight.css') }}" type="text/css" rel="stylesheet" />
-		<link href="{{ asset('bundles/httpimaritimeadmin/js/jqwidgets/jqwidgets/styles/jqx.base.css') }}" type="text/css" rel="stylesheet" />
-		<link href="{{ asset('bundles/httpimaritimeadmin/js/jqwidgets/jqwidgets/styles/jqx.darkblue.css') }}" type="text/css" rel="stylesheet" />
-		<link href="{{ asset('bundles/httpimaritimeadmin/js/jqwidgets/jqwidgets/styles/jqx.lightness.css') }}" type="text/css" rel="stylesheet" />
-		<link href="{{ asset('bundles/httpimaritimeadmin/js/jqwidgets/jqwidgets/styles/jqx.green.css') }}" type="text/css" rel="stylesheet" />
-		<link href="{{ asset('bundles/httpimaritimeadmin/js/jqwidgets/jqwidgets/styles/jqx.red.css') }}" type="text/css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="/res/css/datagrid.css" media="all" />
+            {% stylesheets
+                '@HttpiMaritimeAdminBundle/Resources/public/css/reset.css'
+                '@HttpiMaritimeAdminBundle/Resources/public/css/general.css'
+                '@HttpiMaritimeAdminBundle/Resources/public/css/breadcrumbs.css'
+                '@HttpiMaritimeAdminBundle/Resources/public/js/jquerymsgbox/Styles/msgBoxLight.css'
+                '@HttpiMaritimeAdminBundle/Resources/public/js/jqwidgets/jqwidgets/styles/jqx.base.css'
+                '@HttpiMaritimeAdminBundle/Resources/public/js/jqwidgets/jqwidgets/styles/jqx.darkblue.css'
+                '@HttpiMaritimeAdminBundle/Resources/public/js/jqwidgets/jqwidgets/styles/jqx.green.css'
+                '@HttpiMaritimeAdminBundle/Resources/public/js/jqwidgets/jqwidgets/styles/jqx.red.css'
+            %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+		    <link rel="stylesheet" type="text/css" href="/res/css/datagrid.css" media="all" />
         {% endblock %}
 
 	</head>		
@@ -49,10 +52,14 @@
 				{% endblock %}	
 				</div>
 				<!-- //#page -->
-			
+
 		</div>
 		<!-- //#wrapper -->
-		
+
+        <!-- #version -->
+        <div id="version">{{ appversion }}</div>
+        <!-- //#version -->
+
 		{% block js %}
 			{% javascripts
 				'@HttpiMaritimeCoreBundle/Resources/public/js/jquery.min.js'
