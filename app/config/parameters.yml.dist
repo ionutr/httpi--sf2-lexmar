@@ -15,4 +15,4 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
 
     extends_template:  HttpiMaritimeAdminBundle:Default:layout.html.twig
-    app.version:       dev
+    app.version:       rc--1.0.0-alpha
