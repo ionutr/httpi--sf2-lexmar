@@ -41,6 +41,6 @@ security:
         - { path: ^/admin/system/, roles: ROLE_SUPER_ADMIN }
         - { path: ^/admin/status/, roles: ROLE_SUPER_ADMIN }
         - { path: ^/admin/, roles: ROLE_ADMIN }
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https } #verify this!!!
     acl:
         connection: default
