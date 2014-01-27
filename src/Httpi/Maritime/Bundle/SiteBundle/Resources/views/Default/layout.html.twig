@@ -10,8 +10,8 @@
 
         {% block css %}
             {% stylesheets
-            '@HttpiCoreBundle/Resources/public/css/reset.css'
-            '@HttpiMaritimeSiteBundle/Resources/public/css/web.css'
+                '@HttpiCoreBundle/Resources/public/css/reset.css'
+                '@HttpiMaritimeSiteBundle/Resources/public/css/web.sass' filter='sass'
             %}
             <link rel="stylesheet" href="{{ asset_url }}" />
             {% endstylesheets %}

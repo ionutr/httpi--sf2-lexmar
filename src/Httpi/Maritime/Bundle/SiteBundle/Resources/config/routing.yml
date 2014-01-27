@@ -1,3 +1,11 @@
 httpi_maritime_site_homepage:
     pattern:  /
     defaults: { _controller: HttpiMaritimeSiteBundle:Default:index }
+
+httpi_maritime_site_demo:
+    pattern:  /demo/
+    defaults: { _controller: HttpiMaritimeSiteBundle:Demo:index }
+
+httpi_maritime_site_demo_lexicon_listing:
+    pattern:  /demo/lexicon/
+    defaults: { _controller: HttpiMaritimeSiteBundle:Demo:lexicon }
