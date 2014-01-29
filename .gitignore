@@ -9,6 +9,7 @@ web/css/*
 web/js/*
 web/uploads/*
 web/bundles/*
+web/app_dev.php
 
 # Configuration files
 app/config/parameters.ini
