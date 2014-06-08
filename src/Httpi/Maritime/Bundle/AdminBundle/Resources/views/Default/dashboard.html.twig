@@ -1,5 +1,16 @@
 {% extends "HttpiMaritimeAdminBundle:Default:layout.html.twig" %}
 
+{% block bodyCssClass %}context--dashboard{% endblock %}
+
+{% block css %}
+    {{ parent() }}
+    {% stylesheets
+        '@HttpiMaritimeAdminBundle/Resources/public/css/context.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
 {% block content %}
 <h1>Welcome</h1>
 {% endblock %}

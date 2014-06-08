@@ -9,9 +9,9 @@
         <meta name="Copyright" content="{% block meta_copyright %}{% endblock %}" />
 
         {% block css %}
-            {% stylesheets
+            {% stylesheets filter='compass'
                 '@HttpiCoreBundle/Resources/public/css/reset.css'
-                '@HttpiMaritimeSiteBundle/Resources/public/css/web.sass' filter='sass'
+                '@HttpiMaritimeSiteBundle/Resources/public/css/web.sass'
             %}
             <link rel="stylesheet" href="{{ asset_url }}" />
             {% endstylesheets %}

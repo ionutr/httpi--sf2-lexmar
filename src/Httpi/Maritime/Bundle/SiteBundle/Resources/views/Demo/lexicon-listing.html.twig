@@ -6,8 +6,8 @@
 
 {% block css %}
     {{ parent() }}
-    {% stylesheets
-    '@HttpiMaritimeSiteBundle/Resources/public/css/modules/demo.css'
+    {% stylesheets filter="compass"
+        '@HttpiMaritimeSiteBundle/Resources/public/css/modules/demo.sass'
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
