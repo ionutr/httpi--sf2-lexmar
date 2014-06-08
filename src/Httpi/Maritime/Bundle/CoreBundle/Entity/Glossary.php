@@ -3,7 +3,6 @@
 namespace Httpi\Maritime\Bundle\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Httpi\Bundle\CoreBundle\Library\Model\ModelTrait;
 
 /**
  * Glossary
@@ -13,8 +12,6 @@ use Httpi\Bundle\CoreBundle\Library\Model\ModelTrait;
  */
 class Glossary
 {
-    use ModelTrait;
-
     /**
      * @var integer
      *

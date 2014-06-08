@@ -1,13 +1,13 @@
 {% extends "HttpiMaritimeSiteBundle:Default:layout.html.twig" %}
 
-{% block title %}Homepage{% endblock %}
+{% block title %}Demo{% endblock %}
 
-{% block bodyClass %}template--default context--homepage{% endblock %}
+{% block bodyClass %}template--demo context--index{% endblock %}
 
 {% block css %}
     {{ parent() }}
     {% stylesheets
-    '@HttpiMaritimeSiteBundle/Resources/public/css/modules/homepage.css'
+    '@HttpiMaritimeSiteBundle/Resources/public/css/modules/demo.css'
     %}
     <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
